@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Basic</title>
+<script language="javaScript">
+	var rows = 10;
+	var cols = 10;
+	document.write("<table border=\"1\">");
+	for (i = 1; i < rows; i++) {
+		document.write("<tr>");
+		for (j = 1; j < cols; j++) {
+			if (j <= i) {
+				document.write("<td>" + i + " * " + j + " = " + i * j + "</td>");
+			} else {
+				document.write("<tb>&nbsp;</tb>");
+			}
+		}
+		document.write("</tr>");
+	}
+	document.write("</table>");
+</script>
+</head>
+<body>
+	<h1>JS Multiply Table Demo</h1>
+</body>
+</html>

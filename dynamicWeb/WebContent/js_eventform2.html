@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Basic</title>
+<script language="javaScript">
+	function show() {
+		var name = document.myform.name.value;
+		alert("Name: " + name);
+		var sex;
+		if (document.myform.sex[0].checked) {
+			sex = document.myform.sex[0].value;
+		} else {
+			sex = document.myform.sex[1].value;
+		}
+		alert("Sex: " + sex);
+		var inst = "";
+		for (i = 0; i < document.myform.inst.length; i++) {
+			if (document.myform.inst[i].checked) {
+				inst += document.myform.inst[i].value + ", ";
+			}
+		}
+		alert("Interest:" + inst);
+		console.log(name + sex + inst);
+	}
+</script>
+</head>
+<body>
+	<form action="" method="post" name="myform">
+		Name: <input type="text" name="name"> <br>
+		Sex:  <input type="radio" name="sex" value="Male">Male
+			  <input type="radio" name="sex" value="Female">Female<br>
+		Interest: <input type="checkbox" name="inst" value="Sing">Sing
+		          <input type="checkbox" name="inst" value="Dance">Dance 
+		          <input type="checkbox" name="inst" value="Swim">Swim 
+		          <input type="checkbox" name="inst" value="Program">Program 
+		          <input type="checkbox" name="inst" value="Surf">Surf <br>
+		<input
+			type="button" value="display" onclick="show()">
+	</form>
+</body>
+</html>

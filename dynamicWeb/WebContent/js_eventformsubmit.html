@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Basic</title>
+<script language="javaScript">
+	function validate(form) {
+		var mail = form.email.value;
+		if (!/^\w+@\w+.\w+$/.test(mail)) {
+			alert("Wrong mail adress!");
+			form.email.focus();
+			form.email.select();
+			return false;
+		} else {
+			return true;
+		}
+	}
+</script>
+</head>
+<body>
+	<form action="" method="post" name="myform" onSubmit="return validate(this)">
+		Email: <input type="text" name="email"> 
+		<input type="submit" value="submit"">
+	</form>
+</body>
+</html>

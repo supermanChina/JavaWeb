@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Basic</title>
+<script language="javaScript">
+	function arrayFun() {
+		var arr = new Array(3);
+		for(i=0; i<arr.length; i++){
+			arr[i] = i;
+		}
+		var str="Array content: "
+		for(i=0; i<arr.length; i++){
+			str += arr[i] +", ";
+		}
+		return str;
+	}
+	alert(arrayFun());
+</script>
+</head>
+<body>
+	<h1>JS array function demo</h1>
+</body>
+</html>
