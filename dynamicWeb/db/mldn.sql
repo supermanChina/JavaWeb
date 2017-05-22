@@ -1,0 +1,12 @@
+USE mldn;
+DROP TABLE IF EXISTS member;
+
+CREATE TABLE member(
+	MID 		VARCHAR(50) 	PRIMARY KEY,
+	PASSWORD	VARCHAR(32)		NOT NULL,
+	NAME		VARCHAR(30)		NOT NULL
+);
+
+INSERT INTO member(MID, PASSWORD, NAME) VALUES('admin', 'admin', '管理员');
+INSERT INTO member(MID,PASSWORD,NAME) VALUES('guest', 'guest', '游客');
+INSERT INTO member(MID,PASSWORD,NAME) VALUES('user', 'user', '普通用户');

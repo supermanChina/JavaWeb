@@ -1,12 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>dynamicWeb</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>dynamicWeb</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+	
+	<servlet>
+		<servlet-name>dbinit</servlet-name>
+		<jsp-file>/WEB-INF/init.jsp</jsp-file>
+		<init-param>
+			<param-name>driver</param-name>
+			<param-value>org.gjt.mm.mysql.Driver</param-value>
+		</init-param>
+		<init-param>
+			<param-name>url</param-name>
+			<param-value>jdbc:mysql://localhost:3306/mldn</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dbinit</servlet-name>
+		<url-pattern>/config.mldn</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>hello</servlet-name>
+		<jsp-file>/WEB-INF/hello.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>hello</servlet-name>
+		<url-pattern>/hello.map</url-pattern>
+		<url-pattern>/hello1.map</url-pattern>
+		<!-- url-pattern可以定义多个，这些定义都映射到hello这个名字对应的servlet访问 -->
+	</servlet-mapping>
+
 </web-app>
