@@ -19,6 +19,9 @@
 			<br> session ID:
 			<%=session.getId()%>
 		</h2>
+		<h3>
+			点击这里<a href="logout.jsp">退出</a>
+		</h3>
 	</center>
 </body>
 </html>

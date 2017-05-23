@@ -45,6 +45,22 @@
 
 	<%
 		if (found) {
+			String value = request.getParameter("remember");
+			if ("Y".equals(value)) {
+				Cookie cookiePwd = new Cookie("password", request.getParameter("password"));
+				cookiePwd.setMaxAge(600);
+				Cookie cookieId = new Cookie("id", request.getParameter("id"));
+				cookieId.setMaxAge(600);
+				response.addCookie(cookieId);
+				response.addCookie(cookiePwd);
+			} else {
+				Cookie cookiePwd = new Cookie("password", "");
+				cookiePwd.setMaxAge(0);
+				Cookie cookieId = new Cookie("id", "");
+				cookieId.setMaxAge(0);
+				response.addCookie(cookieId);
+				response.addCookie(cookiePwd);
+			}
 			//session设置属性不需要通过网络传参，而是在服务器内部对象传递
 			session.setAttribute("loginUser", name);
 			//Requset传参时指定编码格式，在目标页面getParam时设置同样的编码格式后再获取
