@@ -13,7 +13,7 @@
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 
-	
+
 	<servlet>
 		<servlet-name>dbinit</servlet-name>
 		<jsp-file>/WEB-INF/init.jsp</jsp-file>
@@ -32,14 +32,22 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>hello</servlet-name>
+		<servlet-name>hellojsp</servlet-name>
 		<jsp-file>/WEB-INF/hello.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>hello</servlet-name>
+		<servlet-name>hellojsp</servlet-name>
 		<url-pattern>/hello.map</url-pattern>
 		<url-pattern>/hello1.map</url-pattern>
 		<!-- url-pattern可以定义多个，这些定义都映射到hello这个名字对应的servlet访问 -->
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>hello</servlet-name>
+		<servlet-class>com.java.demo.servlet.HelloServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>hello</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
 </web-app>

@@ -8,7 +8,7 @@
 *property为java bean的属性*
 `<jsp:setProperty property="name" name="bean" />`
 ## 指定参数:
-*param为HTML FORM中的key/value的key*
+*param为HTML FORM中的key/value的key*  
 `<jsp:setProperty property="name" param="name" name="bean" />`
 
 定义的bean根据scope不同，存放于对应的application, request, session和pageConText的属性中。
