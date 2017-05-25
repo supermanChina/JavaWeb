@@ -32,7 +32,7 @@ public class HelloServlet extends HttpServlet {
 ```
 
 ## 配置
-- web.xml
+- web.xml  
 为HelloServlet在应用的[web.xml](../WEB-INF/web.xml)中添加如下配置：
 ```	
     <servlet>
@@ -105,9 +105,21 @@ init(ServletConfig config)方法通过config传入web.xml中该servlet的初始�
 HttpServlet.service()方法解析request，根据请求方法类型调用对应的doGet()和doPost()等方法处理。
 ### 销毁
 WEB服务关闭时调用 destory()方法，在destory()中释放相关资源。
-##获取内置对象
+
+## 获取内置对象
 ### session
 `req.getSession()`获取当前session  
 `req.getSession(true)`获取当前session。如果当前session不存在则创建一个新session.  
 ### ServletContext
 `getServletContext()`ServletContext就是JSP中的内置application对象
+
+## forward
+### 客户端跳转
+`response.sendRedirect("target path")` 跳转传递session范围的属性，不能传递request范围属性。  
+### 服务端跳转
+通过request获取`RequestDispather`对象，使用该对象的`forward()`方法跳转。  
+该跳转可以接收request和session范围的属性。
+```
+RequestDispather rd = req.getRequestDispatcher("target path");
+rd.forward(req, resp);
+```
