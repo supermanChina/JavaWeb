@@ -4,20 +4,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>读取配置参数</title>
+<title>Check page</title>
+<jsp:useBean id="reg" scope="request" class="com.jsp.demo.bean.Register"></jsp:useBean>
+<jsp:setProperty name="reg" property="*" />
 </head>
 <body>
 
 	<%
-		//获取web.xml中配置的初始参数
-		String dbDriver = config.getInitParameter("driver");
-		String dbUrl = config.getInitParameter("url");
+		if (reg.isValid()) {
 	%>
-	<h3>
-		DB驱动程序：
-		<%=dbDriver%></h3>
-	<h3>
-		DB连接地址
-		<%=dbUrl%></h3>
+	<jsp:forward page="success.jsp" />
+	<%
+		} else {
+	%>
+	<jsp:forward page="index.jsp" />
+	<%
+		}
+	%>
+
 </body>
 </html>
