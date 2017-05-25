@@ -1,13 +1,13 @@
-#定义bean
+# 定义bean
 `<jsp:useBean id="bean" scope="page" class="com.jsp.demo.bean.SimpleBean" />`
 
-#映射request参数到bean
-##自动匹配
+# 映射request参数到bean
+## 自动匹配
 `<jsp:setProperty property="*" name="bean" />`
-##指定属性
+## 指定属性
 *property为java bean的属性*
 `<jsp:setProperty property="name" name="bean" />`
-##指定参数:
+## 指定参数:
 *param为HTML FORM中的key/value的key*
 `<jsp:setProperty property="name" param="name" name="bean" />`
 
