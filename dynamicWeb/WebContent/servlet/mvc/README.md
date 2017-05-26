@@ -6,12 +6,12 @@
 - Servlet接收request
 - 调用JavaBean操作Modle层数据
 - 将数据传递给`RequestDispatcher`，转发到JSP页面显示View.
-**由于只有一次请求转发，因此使用request scope传递属性提高性能**
+**由于只有一次请求转发，因此使用request scope传递属性提高性能**  
 登录实现示例： [LoginServlet](../../../src/com/demo/user/servlet/LoginServlet.java)
 
 ## 问题处理
-### 问题1：找不到login.jsp
-访问`http://localhost:8080/dynamicWeb/mvc/loginServlet`报如下错误：
+### 问题1：找不到login.jsp  
+访问`http://localhost:8080/dynamicWeb/mvc/loginServlet`报如下错误：  
 `HTTP Status 404 - /dynamicWeb/mvc/servlet/mvc/login.jsp`
 #### 分析
 servlet-mapping配置中`url-pattern`指向`/mvc/loginServlet`.

@@ -59,4 +59,18 @@
 		<servlet-name>login</servlet-name>
 		<url-pattern>/servlet/mvc/loginServlet</url-pattern>
 	</servlet-mapping>
+
+	<!-- Simple Filter Demo-->
+	<filter>
+		<filter-name>simple</filter-name>
+		<filter-class>com.demo.filter.SimpleFilter</filter-class>
+		<init-param>
+			<param-name>ref</param-name>
+			<param-value>HelloFilter</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>simple</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 </web-app>
