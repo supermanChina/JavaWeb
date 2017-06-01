@@ -41,6 +41,7 @@
 			pstmt.close();
 			conn.close();
 		}
+		request.setCharacterEncoding("UTF-8");
 	%>
 
 	<%

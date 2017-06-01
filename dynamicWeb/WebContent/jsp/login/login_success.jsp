@@ -11,7 +11,7 @@
 		<h1>登录操作</h1>
 		<h2>登录成功</h2>
 		<%
-			request.setCharacterEncoding("UTF-8");
+			request.setCharacterEncoding("utf-8");
 			String uname = request.getParameter("uname");
 		%>
 		<h2>

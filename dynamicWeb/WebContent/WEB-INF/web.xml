@@ -73,4 +73,19 @@
 		<filter-name>simple</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	<listener>
+		<listener-class>com.demo.servelet.listener.ServletContexListenerDemo</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.demo.servelet.listener.HttpHttpSessionListenerDemo</listener-class>
+	</listener>
+	
+	<servlet>
+		<servlet-name>loginAction</servlet-name>
+		<servlet-class>com.demo.practice.admin.LoginActionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>loginAction</servlet-name>
+		<url-pattern>/servlet/practice/admin/jsp/loginAction</url-pattern>
+	</servlet-mapping>
 </web-app>

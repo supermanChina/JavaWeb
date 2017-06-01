@@ -113,9 +113,10 @@ WEB服务关闭时调用 destory()方法，在destory()中释放相关资源。
 ### ServletContext
 `getServletContext()`ServletContext就是JSP中的内置application对象
 
-## forward
+## 跳转
 ### 客户端跳转
 `response.sendRedirect("target path")` 跳转传递session范围的属性，不能传递request范围属性。  
+跳转后浏览器会显示target path跳转地址。
 ### 服务端跳转
 通过request获取`RequestDispather`对象，使用该对象的`forward()`方法跳转。  
 该跳转可以接收request和session范围的属性。
@@ -123,3 +124,4 @@ WEB服务关闭时调用 destory()方法，在destory()中释放相关资源。
 RequestDispather rd = req.getRequestDispatcher("target path");
 rd.forward(req, resp);
 ```
+服务端跳转对用户透明，浏览器地址不会改变。  
