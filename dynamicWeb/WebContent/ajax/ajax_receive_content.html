@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AJAX request data demo</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var xmlHttp;
+		function createXMLHttp() {
+			if (window.XMLHttpRequest) {
+				xmlHttp = new XMLHttpRequest();
+			} else {
+				xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+		}
+
+		function showMsg() {
+			createXMLHttp();
+			xmlHttp.open("POST", "content.html");
+			xmlHttp.onreadystatechange = showMsgCallback;
+			xmlHttp.send(null);
+		}
+
+		function showMsgCallback() {
+			console.log("***********************************");
+			console.log("readyState:" + xmlHttp.readyState);
+			console.log("responseBody:" + xmlHttp.responseBody);
+			console.log("responseStream:" + xmlHttp.responseStream);
+			console.log("responseText:" + xmlHttp.responseText);
+			console.log("responseXML:" + xmlHttp.responseXML);
+			console.log("status:" + xmlHttp.status);
+			console.log("statusText:" + xmlHttp.statusText);
+			if (xmlHttp.readyState == 4) {
+				if (xmlHttp.status == 200) {
+					var text = xmlHttp.responseText;
+					document.getElementById("msg").className = "CSS Name";
+					document.getElementById("msg").innerHTML = text;
+				} else if (xmlHttp.status == 404) {
+					var text = xmlHttp.responseText;
+					document.getElementById("msg").className = "CSS Name";
+					document.getElementById("msg").innerHTML = "Not found";
+				}
+			}
+		}
+	</script>
+
+	<input type="button" onclick="showMsg()"
+		value="Call AJAX to show response">
+	<br>
+	<span id="msg"></span>
+</body>
+</html>

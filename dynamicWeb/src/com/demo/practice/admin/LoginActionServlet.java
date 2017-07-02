@@ -28,8 +28,8 @@ public class LoginActionServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		String pwd = request.getParameter("pwd");
 		
-		if (checkAccountPass()){
-			request.getRequestDispatcher("jsp/login.jsp").forward(request, response);
+		if (checkAccountPass(name, pwd)){
+			request.getRequestDispatcher("jsp/welcome.jsp").forward(request, response);
 		}else{
 			request.setAttribute("result", "登录失败：错误的用户名或密码！");
 			request.getRequestDispatcher("login.jsp").forward(request, response);
@@ -38,7 +38,7 @@ public class LoginActionServlet extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
-	private boolean checkAccountPass() {
+	private boolean checkAccountPass(String name, String pwd) {
 		// TODO Auto-generated method stub
 		return false;
 	}

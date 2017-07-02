@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AJAX XML demo</title>
+</head>
+<script type="text/javascript">
+	var xmlHttp;
+	function createXMLHttp() {
+		if (window.XMLHttpRequest) {
+			xmlHttp = new XMLHttpRequest();
+		} else {
+			// For IE6 & blow
+			xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+	}
+	function getCity() {
+		createXMLHttp();
+		xmlHttp.open("POST", "allarea.xml");
+		xmlHttp.onreadystatechange = getCityCallback;
+		xmlHttp.send(null);
+	}
+	function getCityCallback() {
+		if (xmlHttp.readyState == 4) {
+			if (xmlHttp.status == 200) {
+				var allarea = xmlHttp.responseXML
+						.getElementsByTagName("allarea")[0].childNodes;
+				var select = document.getElementById("city");
+				select.length = 1;
+				select.options[0].selected = true;
+				for (var i = 0; i < allarea.length; i++) {
+					if (allarea[i].nodeType == 1) { // nodeType =3 为text节点， =1为命名子节点
+						var area = allarea[i];
+						var option = document.createElement("option");
+						var id = area.getElementsByTagName("id")[0].firstChild.nodeValue;
+						var title = area.getElementsByTagName("title")[0].firstChild.nodeValue;
+						option.setAttribute("value", id);
+						option.appendChild(document.createTextNode(title));
+						select.appendChild(option);
+					}
+				}
+			}
+		}
+
+	}
+</script>
+<body onload="getCity()">
+	<form action="" method="post">
+		请选择喜欢的城市： <select name="city" id="city">
+			<option value="0">-请选择城市</option>
+		</select>
+	</form>
+</body>
+</html>

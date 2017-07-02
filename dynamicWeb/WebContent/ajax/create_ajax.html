@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AJAX creation demo</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+var xmlHttp;
+function createXMLHttp()
+{
+	if(window.XMLHttpRequest){
+		xmlHttp = new XMLHttpRequest();
+	}else{
+		// For IE6 & below
+		xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+}
+</script>
+</html>
