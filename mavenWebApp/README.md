@@ -15,6 +15,6 @@
 ![重新设置Dynamic Web Module](images/prj3.png)
 7. 点击下面的黄色`Futher Configuration available..`提示，在弹出的`Web Module`窗口中修改`Content Directory`目录指向自动生成的`src/main/webapp`目录，并勾选`Generate web.xml deplopyment descriptor`。点击OK关闭窗口然后再点击OK关闭Properties应用修改。  
 ![设置Web Module](images/prj4.png)
-8. 完成后项目Maven Web项目创建成功，如下图所示
+8. 完成后项目Maven Web项目创建成功，如下图所示  
 ![成功创建Maven Web项目](images/prj5.png)
 
