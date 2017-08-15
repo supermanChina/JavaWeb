@@ -1,8 +1,8 @@
 # 使用Eclipse创建MAVEN WEB项目
 参考网络链接：
-[使用eclipse插件创建一个web project](http://blog.csdn.net/chuyuqing/article/details/28879477)
+[使用eclipse插件创建一个web project](http://blog.csdn.net/chuyuqing/article/details/28879477)  
 [用Maven创建第一个web项目](http://blog.csdn.net/xybelieve1990/article/details/52043127)
-## 创建Maven项目
+## 先创建Maven项目再转化为WEB项目
 基于Eclipse Version: Neon.3 Release (4.6.3)  
 1. 选择新建Maven project，并勾选Create a simple project选项。
 2. `Configure project`窗口中填写`Group Id`和`Artifact Id`并选择`Packaging`为`war`。
@@ -18,3 +18,5 @@
 8. 完成后项目Maven Web项目创建成功，如下图所示  
 ![成功创建Maven Web项目](images/prj5.png)
 
+## 先创建WEB项目再转化为MAVEN项目
+也可以先创建一个标准的WEB项目，然后在项目右键选择Config->Convert to Maven Project来将WEB项目转化为MAVEN项目。
